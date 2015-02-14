@@ -25,7 +25,7 @@ public class Journey implements Serializable{
         return duration;
     }
 
-    public String get_Lable(){
+    public String get_Label(){
         return label;
     }
 }

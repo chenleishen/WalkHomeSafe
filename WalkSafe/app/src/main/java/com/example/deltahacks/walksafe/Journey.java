@@ -21,11 +21,21 @@ public class Journey implements Serializable{
         this.duration = duration;
     }
 
-    public int get_Duration(){
+    public void setDuration(int duration1){
+        this.duration = duration1;
+    }
+
+    public void setJourney(String start, String end){
+        this.start = start;
+        this.end = end;
+        this.label = "From " + start + " to " + end;
+    }
+
+    public int getDuration(){
         return duration;
     }
 
-    public String get_Label(){
+    public String getLabel(){
         return label;
     }
 }

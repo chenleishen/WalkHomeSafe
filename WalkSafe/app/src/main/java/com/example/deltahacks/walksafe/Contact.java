@@ -15,6 +15,14 @@ public class Contact implements Serializable {
         this.number = number;
     }
 
+    public void setName(String name1){
+        this.name = name1;
+    }
+
+    public void setNumber(String number1){
+        this.number = number1;
+    }
+
     public String getContactName() {
         return name;
     }

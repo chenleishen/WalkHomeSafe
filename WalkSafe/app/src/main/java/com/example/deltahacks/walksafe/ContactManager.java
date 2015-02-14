@@ -19,6 +19,20 @@ public class ContactManager implements Serializable{
         this.contacts.add(contact);
     }
 
+    public void deleteContact(Contact contact){
+        this.contacts.remove(contact);
+    }
+
+    public void updateContact(String name){
+        for (Contact contact: this.getContacts()){
+            if (contact.getContactName() == name){
+
+            }
+
+        }
+
+    }
+
     public HashSet<Contact> getContacts() {
         return this.contacts;
     }

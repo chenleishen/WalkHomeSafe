@@ -1,18 +1,17 @@
 package com.example.deltahacks.walksafe;
 
 import java.io.Serializable;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 /**
  * Created by faye on 2015-02-14.
  */
 public class ContactManager implements Serializable{
 
-    private HashSet<Contact> contacts;
+    private ArrayList<Contact> contacts;
 
     public ContactManager(){
-        this.contacts = new HashSet<Contact>();
-
+        this.contacts = new ArrayList<Contact>();
     }
 
     public void addContact(Contact contact){
@@ -23,17 +22,18 @@ public class ContactManager implements Serializable{
         this.contacts.remove(contact);
     }
 
-    public void updateContact(String name){
-        for (Contact contact: this.getContacts()){
-            if (contact.getContactName() == name){
-
-            }
-
+    public void updateContact(int index, String name, String number){
+        Contact contact = this.contacts.get(index);
+        if(name != null) {
+            contact.setName(name);
+        }
+        if(number !=null) {
+            contact.setNumber(number);
         }
 
     }
 
-    public HashSet<Contact> getContacts() {
+    public ArrayList<Contact> getContacts() {
         return this.contacts;
     }
 

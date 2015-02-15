@@ -21,13 +21,16 @@
     <string name="panic">Call For Help</string>
     <string name="home">Safely Back Home</string>
     <string name="settings">Settings</string>
-
     <string name="duration">Choose a Journey</string>
+    <string name="recheck">Did you get home safe?</string>
 
     <string-array name="duration_arrays">
         <item>10 min</item>
         <item>20 min</item>
         <item>30 min</item>
     </string-array>
+
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="title_activity_wait">WaitActivity</string>
 
 </resources>

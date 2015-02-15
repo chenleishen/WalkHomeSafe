@@ -40,6 +40,14 @@
             android:name=".RemoveActivity"
             android:label="@string/title_activity_remove" >
         </activity>
+        <activity
+            android:name=".HelpActivity"
+            android:label="@string/title_activity_help" >
+        </activity>
+        <activity
+            android:name=".WaitActivity"
+            android:label="@string/title_activity_wait" >
+        </activity>
     </application>
 
 </manifest>

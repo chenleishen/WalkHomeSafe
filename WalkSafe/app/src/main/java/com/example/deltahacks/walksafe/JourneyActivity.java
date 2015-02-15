@@ -48,16 +48,16 @@ public class JourneyActivity extends ActionBarActivity {
         jane.start(journeyNum);
     //    startActivity(nextIntent);
     }
-    public void home(){
+    public void homeSafe(View view){
         Intent intent = getIntent();
         Intent nextIntent = new Intent(this, MainActivity.class);
         startActivity(nextIntent);
     }
 
-    public void help(){
-        Intent intent = getIntent();
-        Intent nextIntent = new Intent(this, MainActivity.class);
-        startActivity(nextIntent);
-    }
+//    public void helpMe(){
+//        Intent intent = getIntent();
+//        Intent nextIntent = new Intent(this, .class);
+//        startActivity(nextIntent);
+//    }
 
 }

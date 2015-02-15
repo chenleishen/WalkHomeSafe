@@ -59,7 +59,7 @@ public class AddActivity extends ActionBarActivity {
         startActivity(nextIntent);
 
 
-        }
+        
 
 
 

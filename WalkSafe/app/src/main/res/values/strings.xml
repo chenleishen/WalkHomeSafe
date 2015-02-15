@@ -16,4 +16,12 @@
     <string name="add">Add Contact</string>
     <string name="remove">Remove Contact</string>
 
+    <string name="duration">Choose a Journey</string>
+
+    <string-array name="duration_arrays">
+        <item>10 min</item>
+        <item>20 min</item>
+        <item>30 min</item>
+    </string-array>
+
 </resources>

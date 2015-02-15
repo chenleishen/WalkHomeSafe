@@ -13,6 +13,19 @@
         android:onClick="goToSettings"
         android:id="@+id/settings" />
 
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/duration_arrays"
+        android:prompt="@string/duration" />
+
+   <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:onClick="startJourney"
+        android:id="@+id/start" />
 
 
 </LinearLayout>

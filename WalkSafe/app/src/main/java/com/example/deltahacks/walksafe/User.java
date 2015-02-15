@@ -18,7 +18,7 @@ public class User implements Serializable {
     }
 
     public void start(int journeyNum, Runnable check){
-            timeKeeper.postDelayed(check, (journeyNum+1)*1000);
+            timeKeeper.postDelayed(check, (journeyNum+1)*1000*5);
     }
 
     public void startPanic(Runnable check){
@@ -35,7 +35,7 @@ public class User implements Serializable {
         /**
          * call when user selects add more time default 5 seconds
          */
-        timeKeeper.postDelayed(check,5*1000*60);
+        timeKeeper.postDelayed(check,1000*5);
     }
 }
 

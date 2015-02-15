@@ -37,7 +37,7 @@ public class JourneyActivity extends ActionBarActivity {
             int journeyNum = (int) intent.getSerializableExtra("journeyKey");
             jane.start(journeyNum, checkAgainSignal);
         } catch (Exception ex) {
-            jane.start(3, checkAgainSignal);
+            jane.start(1, checkAgainSignal);
         }
     }
 

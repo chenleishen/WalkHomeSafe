@@ -5,6 +5,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import android.content.Intent;
 
 
 public class MainActivity extends Activity {
@@ -13,7 +18,28 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        try {
+            BufferedReader contactReader = new BufferedReader
+                    (new FileReader(this.getApplicationContext().getFilesDir().toString() + "/contacts.txt"));
+            String contactLine = null;
+            String[] contactInfo;
+            while ((contactLine = contactReader.readLine()) != null) {
+                contactInfo = contactLine.split(",");
+                String name = contactInfo[1];
+                String number= contactInfo[2];
+                //ContactManager.addContact(new Contact(name, number));
+            }
+            contactReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

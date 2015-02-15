@@ -20,7 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/home"
-        android:id="@+id/finishwalk"
+        android:id="@+id/button2"
+        android:onClick="homeSafe"
         android:layout_below="@+id/textView3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="58dp" />
@@ -28,8 +29,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/more"
+        android:text="@string/wait"
+        android:id="@+id/hoe"
+        android:onClick="addMoreTime"
         android:layout_below="@+id/button2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="77dp" />

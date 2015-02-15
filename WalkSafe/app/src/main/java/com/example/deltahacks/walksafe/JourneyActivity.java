@@ -10,14 +10,28 @@ import android.view.View;
 
 public class JourneyActivity extends ActionBarActivity {
 
+    public View v;
+    private User jane = new User();
+    final Runnable checkAgainSignal = new Runnable() {
+        @Override
+        public void run() {
+            checkAgain(v);
+        };
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journey);
-        startJourney();
+        Intent intent = getIntent();
+        try {
+            int journeyNum = (int) intent.getSerializableExtra("journeyKey");
+            jane.start(journeyNum, checkAgainSignal);
+        } catch (Exception ex) {
+            jane.start(3, checkAgainSignal);
+        }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,24 +54,25 @@ public class JourneyActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void startJourney(){
-        Intent intent = getIntent();
-    //    Intent nextIntent = new Intent(this, MainActivity.class);
-        User jane = new User();
-        int journeyNum = (int) intent.getSerializableExtra("journeyKey");
-        jane.start(journeyNum);
-    //    startActivity(nextIntent);
-    }
+
     public void homeSafe(View view){
+        jane.gotHome(checkAgainSignal);
         Intent intent = getIntent();
         Intent nextIntent = new Intent(this, MainActivity.class);
         startActivity(nextIntent);
     }
 
-//    public void helpMe(){
-//        Intent intent = getIntent();
-//        Intent nextIntent = new Intent(this, .class);
-//        startActivity(nextIntent);
-//    }
+    public void helpMe(View view){
+        jane.startPanic(checkAgainSignal);
+        Intent intent = getIntent();
+        Intent nextIntent = new Intent(this, HelpActivity.class);
+        startActivity(nextIntent);
+    }
+
+    public void checkAgain(View view){
+        Intent intent = getIntent();
+        Intent nextIntent = new Intent(this, WaitActivity.class);
+        startActivity(nextIntent);
+    }
 
 }

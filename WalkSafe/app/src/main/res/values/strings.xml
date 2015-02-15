@@ -23,6 +23,7 @@
     <string name="settings">Settings</string>
     <string name="duration">Choose a Journey</string>
     <string name="recheck">Did you get home safe?</string>
+    <string name="wait">5 more minutes</string>
 
     <string-array name="duration_arrays">
         <item>10 min</item>

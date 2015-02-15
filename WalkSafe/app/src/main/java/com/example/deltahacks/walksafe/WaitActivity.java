@@ -1,9 +1,11 @@
 package com.example.deltahacks.walksafe;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class WaitActivity extends ActionBarActivity {
@@ -35,5 +37,21 @@ public class WaitActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void homeSafe(View view) {
+        Intent intent = getIntent();
+        Intent nextIntent = new Intent(this, MainActivity.class);
+        startActivity(nextIntent);
+    }
+
+    public void addMoreTime(View view){
+        /**
+         * call when user selects add more time default 5 minutes
+         */
+        Intent intent = getIntent();
+        Intent nextIntent = new Intent(this, JourneyActivity.class);
+        startActivity(nextIntent);
     }
 }

@@ -1,9 +1,11 @@
 package com.example.deltahacks.walksafe;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class HelpActivity extends ActionBarActivity {
@@ -35,5 +37,11 @@ public class HelpActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void homeSafe(View view){
+        Intent intent = getIntent();
+        Intent nextIntent = new Intent(this, MainActivity.class);
+        startActivity(nextIntent);
     }
 }

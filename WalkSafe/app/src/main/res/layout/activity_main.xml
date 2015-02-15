@@ -13,7 +13,7 @@
         android:onClick="goToSettings"
         android:id="@+id/settings" />
 
-    <TextView
+   <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -21,16 +21,39 @@
         android:id="@+id/textView2"
         android:layout_gravity="center_horizontal" />
 
-   <ListView
+
+
+   <CheckBox
+        android:id="@+id/one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:text="Contact 1"/>
 
+   <CheckBox
+        android:id="@+id/two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact 2" />
 
-    <Spinner
+   <CheckBox
+        android:id="@+id/three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact 3" />
+
+   <CheckBox
+        android:id="@+id/four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact 4" />
+
+   <CheckBox
+        android:id="@+id/five"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact 5" />
+
+   <Spinner
         android:id="@+id/spinner1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

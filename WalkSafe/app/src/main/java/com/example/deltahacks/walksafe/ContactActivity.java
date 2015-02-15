@@ -83,6 +83,7 @@ public class ContactActivity extends Activity {
 
         Intent nextIntent = new Intent(this, SaveActivity.class);
         Intent intent = getIntent();
+
         ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
 
         ArrayList<Contact> contactList = contactManager.getContacts();

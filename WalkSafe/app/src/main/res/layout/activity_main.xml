@@ -6,12 +6,22 @@
     android:orientation="vertical"
     tools:context = "com.example.deltahacks.walksafe.MainActivity" >
 
-   <Button
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/action_settings"
         android:onClick="goToSettings"
         android:id="@+id/settings" />
+
+    <ImageButton
+        android:contentDescription="@string/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:src="@drawable/settings"
+        android:onClick="goToSettings"/>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,6 +54,14 @@
         android:id="@+id/start"
         android:onClick="submitJourney"
         android:layout_gravity="center_horizontal" />
+
+    <ImageView
+        android:contentDescription="@string/desc"
+        android:layout_width="7dp"
+        android:layout_height="7dp"
+        android:id="@+id/background"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/background" />
 
 
 </LinearLayout>

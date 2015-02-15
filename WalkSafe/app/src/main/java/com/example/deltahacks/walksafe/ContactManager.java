@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
+ *
  * Created by faye on 2015-02-14.
  */
+
 public class ContactManager implements Serializable{
 
     private ArrayList<Contact> contacts;
@@ -14,12 +16,9 @@ public class ContactManager implements Serializable{
         this.contacts = new ArrayList<Contact>();
     }
 
-    public void addContact(Contact contact) throws ContactListFullException{
-        if(this.contacts.size() >= 5){
-            throw new ContactListFullException();
-        }else {
-            this.contacts.add(contact);
-        }
+    public void addContact(Contact contact){
+        this.contacts.add(contact);
+
     }
 
     public void deleteContact(Contact contact){

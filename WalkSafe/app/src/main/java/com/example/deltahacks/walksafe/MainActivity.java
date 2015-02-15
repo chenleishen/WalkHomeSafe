@@ -44,8 +44,6 @@ public class MainActivity extends Activity {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (ContactListFullException e) {
-            e.printStackTrace();
         }
 
         CustomAdapter adapter = new CustomAdapter(this, R.layout.contact_list_item, contactManager.getContacts());
@@ -76,12 +74,24 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Moves to ContactActivity (settings page),
+     * allows you to add/delete/update contacts
+     */
+
     public void goToSettings(){
         Intent intent = getIntent();
         Intent nextIntent = new Intent(this, ContactActivity.class);
         ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
         nextIntent.putExtra("managerKey", contactManager);
         startActivity(nextIntent);
+    }
+
+    /**
+     * If new journey is created with correct string, end
+     */
+    public void submitJourney(){
+
     }
 
 }

@@ -20,4 +20,11 @@
         android:onClick="moveToRemove"
         android:id="@+id/remove_contact" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        android:onClick="save"
+        android:id="@+id/save" />
+
 </LinearLayout>

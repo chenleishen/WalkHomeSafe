@@ -1,5 +1,6 @@
 package com.example.deltahacks.walksafe;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 
-public class ContactActivity extends ActionBarActivity {
+public class ContactActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,7 @@ public class ContactActivity extends ActionBarActivity {
     /**
      * Moves to AddActivity
      */
-    public void moveToAdd(){
+    public void moveToAdd(View view){
         Intent intent = getIntent();
         Intent nextIntent = new Intent(this, AddActivity.class);
         ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
@@ -62,9 +63,17 @@ public class ContactActivity extends ActionBarActivity {
     /**
      * Moves to RemoveActivity
      */
-    public void moveToRemove(){
+    public void moveToRemove(View view){
         Intent intent = getIntent();
         Intent nextIntent = new Intent(this, RemoveActivity.class);
+        ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
+        nextIntent.putExtra("managerKey", contactManager);
+        startActivity(nextIntent);
+    }
+
+    public void returnToMain(View view){
+        Intent intent = getIntent();
+        Intent nextIntent = new Intent(this, MainActivity.class);
         ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
         nextIntent.putExtra("managerKey", contactManager);
         startActivity(nextIntent);

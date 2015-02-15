@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.io.BufferedReader;
@@ -79,7 +80,7 @@ public class MainActivity extends Activity {
      * allows you to add/delete/update contacts
      */
 
-    public void goToSettings(){
+    public void goToSettings(View view){
         Intent intent = getIntent();
         Intent nextIntent = new Intent(this, ContactActivity.class);
         ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");

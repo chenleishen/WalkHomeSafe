@@ -21,8 +21,13 @@ public class ContactManager implements Serializable{
 
     }
 
-    public void deleteContact(Contact contact){
-        this.contacts.remove(contact);
+    public void deleteContact(String name) throws MissingContactException{
+        for(Contact c : this.getContacts()){
+            if(c.getContactName().equals(name)){
+                this.contacts.remove(c);
+            }
+        }
+        throw new MissingContactException();
     }
 
     public void updateContact(int index, String name, String number){

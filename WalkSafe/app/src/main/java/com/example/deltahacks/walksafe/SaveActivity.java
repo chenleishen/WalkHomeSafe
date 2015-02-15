@@ -46,7 +46,7 @@ public class SaveActivity extends ActionBarActivity {
      */
     public void returnToMain(View view){
         Intent intent = getIntent();
-        Intent nextIntent = new Intent(this, MainActivity.class);
+        Intent nextIntent = new Intent(this, ContactActivity.class);
         ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
         nextIntent.putExtra("managerKey", contactManager);
         startActivity(nextIntent);

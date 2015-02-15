@@ -27,4 +27,12 @@
         android:onClick="save"
         android:id="@+id/save" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_menu"
+        android:onClick="returnToMain"
+        android:id="@+id/main_menu" />
+
+
 </LinearLayout>

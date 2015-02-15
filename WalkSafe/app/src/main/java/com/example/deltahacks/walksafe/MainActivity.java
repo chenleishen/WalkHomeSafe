@@ -73,4 +73,12 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void goToSettings(){
+        Intent intent = getIntent();
+        Intent nextIntent = new Intent(this, ContactActivity.class);
+        ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
+        nextIntent.putExtra("managerKey", contactManager);
+        startActivity(nextIntent);
+    }
+
 }

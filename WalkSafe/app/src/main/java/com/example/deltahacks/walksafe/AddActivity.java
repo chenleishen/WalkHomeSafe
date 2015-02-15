@@ -50,19 +50,16 @@ public class AddActivity extends ActionBarActivity {
 
         ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
 
-        try{
-            String name = nameText.getText().toString();
-            String number = numberText.getText().toString();
+        String name = nameText.getText().toString();
+        String number = numberText.getText().toString();
 
-            Contact newContact = new Contact(name, number);
-            contactManager.addContact(newContact);
-            nextIntent.putExtra("managerKey", contactManager);
-            startActivity(nextIntent);
+        Contact newContact = new Contact(name, number);
+        contactManager.addContact(newContact);
+        nextIntent.putExtra("managerKey", contactManager);
+        startActivity(nextIntent);
 
-        } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "Please complete all fields",
-                    Toast.LENGTH_LONG).show();
-        }
+
+        
 
 
 

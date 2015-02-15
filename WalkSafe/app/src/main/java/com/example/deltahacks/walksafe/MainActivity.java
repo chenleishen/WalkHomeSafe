@@ -58,8 +58,14 @@ public class MainActivity extends Activity {
         }
 
         CustomAdapter adapter = new CustomAdapter(this, R.layout.contact_list_item, contactManager.getContacts());
+<<<<<<< HEAD
        // ListView listView = (ListView) findViewById(R.id.listView);
        // listView.setAdapter(adapter);
+=======
+        ListView listView = (ListView) findViewById(R.id.listView);
+        listView.setAdapter(adapter);
+
+>>>>>>> FETCH_HEAD
     }
 
 

@@ -39,11 +39,11 @@ public class Journey implements Serializable{
     }
 
     public int getDuration(){
-        return duration;
+        return this.duration;
     }
 
     public String getLabel(){
-        return label;
+        return this.label;
     }
 }
 

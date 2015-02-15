@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -19,6 +21,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ContactManager contactManager = new ContactManager();
+
         try {
             BufferedReader contactReader = new BufferedReader
                     (new FileReader(this.getApplicationContext().getFilesDir().toString() + "/contacts.txt"));
@@ -28,7 +32,7 @@ public class MainActivity extends Activity {
                 contactInfo = contactLine.split(",");
                 String name = contactInfo[1];
                 String number= contactInfo[2];
-                //ContactManager.addContact(new Contact(name, number));
+                contactManager.addContact(new Contact(name, number));
             }
             contactReader.close();
         } catch (FileNotFoundException e) {
@@ -37,7 +41,13 @@ public class MainActivity extends Activity {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (ContactListFullException e) {
+            e.printStackTrace();
         }
+
+        CustomAdapter adapter = new CustomAdapter(this, R.layout.contact_list_item, contactManager.getContacts());
+        ListView listView = (ListView) findViewById(R.id.listView);
+        listView.setAdapter(adapter);
     }
 
 
@@ -62,4 +72,5 @@ public class MainActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

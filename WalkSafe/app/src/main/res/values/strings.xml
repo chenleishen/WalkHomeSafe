@@ -15,6 +15,9 @@
     <string name="submit">Submit</string>
     <string name="add">Add Contact</string>
     <string name="remove">Remove Contact</string>
+    <string name="save">Save</string>
+    <string name="main_menu">Back to Menu</string>
+    <string name="saved">Contacts were successfully saved!</string>
 
     <string name="duration">Choose a Journey</string>
 

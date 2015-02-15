@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class RemoveActivity extends ActionBarActivity {
@@ -42,6 +44,17 @@ public class RemoveActivity extends ActionBarActivity {
     public void remove(View view){
         Intent intent = getIntent();
         Intent nextIntent = new Intent(this, ContactActivity.class);
+        EditText nameText = (EditText) findViewById(R.id.remove_name);
+        String name = nameText.getText().toString();
+        ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
+        try {
+            contactManager.deleteContact(name);
+            nextIntent.putExtra("managerKey", contactManager);
+            startActivity(nextIntent);
+        } catch (MissingContactException e) {
+            Toast.makeText(getApplicationContext(), "Contact does not exist. Please try again.",
+                    Toast.LENGTH_LONG).show();
+        }
 
     }
 }

@@ -15,5 +15,6 @@
     <string name="submit">Submit</string>
     <string name="add">Add Contact</string>
     <string name="remove">Remove Contact</string>
+    <string name="save">Save</string>
 
 </resources>

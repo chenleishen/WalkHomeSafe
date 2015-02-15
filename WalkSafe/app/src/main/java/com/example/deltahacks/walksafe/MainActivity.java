@@ -35,6 +35,9 @@ public class MainActivity extends Activity {
                 contactManager.addContact(new Contact(name, number));
             }
             contactReader.close();
+            /**
+             * replicate for duration
+             */
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (NumberFormatException e) {

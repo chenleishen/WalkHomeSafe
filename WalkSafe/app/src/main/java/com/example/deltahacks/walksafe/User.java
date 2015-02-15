@@ -29,6 +29,9 @@ public class User implements Serializable {
     }
 
     public void start(Journey journey){
+        /**
+         * display wait screen
+         */
         if (checkBoxCheck())
         {
             timeKeeper.postDelayed(checkAgainSignal,journey.getDuration()*1000*60);

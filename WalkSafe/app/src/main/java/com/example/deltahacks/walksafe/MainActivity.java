@@ -34,10 +34,7 @@ public class MainActivity extends Activity {
         addListenerOnButton();
         addListenerOnSpinnerItemSelection();
 
-<<<<<<< Updated upstream
-=======
         //ContactManager contactManager = new ContactManager();
->>>>>>> Stashed changes
 
         try {
             BufferedReader contactReader = new BufferedReader
@@ -63,15 +60,8 @@ public class MainActivity extends Activity {
         }
 
         CustomAdapter adapter = new CustomAdapter(this, R.layout.contact_list_item, contactManager.getContacts());
-<<<<<<< Updated upstream
-        ListView listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(adapter);
-=======
-
-        ListView listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(adapter);
-
->>>>>>> Stashed changes
+      //  ListView listView = (ListView) findViewById(R.id.listView);
+      //  listView.setAdapter(adapter);
     }
 
 
@@ -117,10 +107,7 @@ public class MainActivity extends Activity {
     public void goToSettings(View view){
         Intent intent = getIntent();
         Intent nextIntent = new Intent(this, ContactActivity.class);
-<<<<<<< Updated upstream
-=======
         //ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
->>>>>>> Stashed changes
         nextIntent.putExtra("managerKey", contactManager);
         startActivity(nextIntent);
     }

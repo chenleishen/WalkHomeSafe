@@ -4,40 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context = "com.example.deltahacks.walksafe.MainActivity" >
+    tools:context = "com.example.deltahacks.walksafe.MainActivity"
+    android:weightSum="1">
 
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/action_settings"
-        android:onClick="goToSettings"
-        android:id="@+id/settings" />
-
-<<<<<<< HEAD
     <ImageButton
         android:contentDescription="@string/settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton"
-        android:src="@drawable/settings"
+        android:src="@drawable/settings1"
         android:onClick="goToSettings"/>
 
+    <ImageView
+        android:contentDescription="@string/desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/header" />
 
     <TextView
-=======
-   <TextView
->>>>>>> FETCH_HEAD
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/duration"
-        android:id="@+id/textView2"
+        android:text="Select Contacts"
+        android:id="@+id/textView4"
         android:layout_gravity="center_horizontal" />
 
-
-
-   <CheckBox
+    <CheckBox
         android:id="@+id/one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,7 +61,15 @@
         android:layout_height="wrap_content"
         android:text="Contact 5" />
 
-   <Spinner
+    <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textAppearance="?android:attr/textAppearanceLarge"
+         android:text="@string/duration"
+         android:id="@+id/textView2"
+         android:layout_gravity="center_horizontal" />
+
+    <Spinner
         android:id="@+id/spinner1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -82,13 +84,6 @@
         android:onClick="submitJourney"
         android:layout_gravity="center_horizontal" />
 
-    <ImageView
-        android:contentDescription="@string/desc"
-        android:layout_width="7dp"
-        android:layout_height="7dp"
-        android:id="@+id/background"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/background" />
 
 
 </LinearLayout>

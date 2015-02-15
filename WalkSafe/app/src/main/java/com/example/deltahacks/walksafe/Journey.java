@@ -17,7 +17,9 @@ public class Journey implements Serializable{
     public Journey(String start, String end, int duration) {
         this.start = start;
         this.end = end;
-        this.label = "From " + start + " to " + end;
+        if(start != null && end!= null) {
+            this.label = "From " + start + " to " + end;
+        }
         this.duration = duration;
     }
 
@@ -28,7 +30,12 @@ public class Journey implements Serializable{
     public void setJourney(String start, String end){
         this.start = start;
         this.end = end;
-        this.label = "From " + start + " to " + end;
+        if(start != null && end!= null) {
+            this.label = "From " + start + " to " + end;
+        }
+        else {
+            this.label = start + end;
+        }
     }
 
     public int getDuration(){

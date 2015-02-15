@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
         addListenerOnSpinnerItemSelection();
 
         //ContactManager contactManager = new ContactManager();
+        ContactManager contactManager = new ContactManager();
 
         try {
             BufferedReader contactReader = new BufferedReader
@@ -62,6 +63,7 @@ public class MainActivity extends Activity {
         CustomAdapter adapter = new CustomAdapter(this, R.layout.contact_list_item, contactManager.getContacts());
       //  ListView listView = (ListView) findViewById(R.id.listView);
       //  listView.setAdapter(adapter);
+
     }
 
 

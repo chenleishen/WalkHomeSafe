@@ -29,7 +29,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        addListenerOnButton();
+        addListenerOnSpinnerItemSelection();
 
         ContactManager contactManager = new ContactManager();
 
@@ -57,13 +58,8 @@ public class MainActivity extends Activity {
         }
 
         CustomAdapter adapter = new CustomAdapter(this, R.layout.contact_list_item, contactManager.getContacts());
-<<<<<<< HEAD
-//        ListView listView = (ListView) findViewById(R.id.listView);
-//        listView.setAdapter(adapter);
-=======
-        //ListView listView = (ListView) findViewById(R.id.listView);
-        //listView.setAdapter(adapter);
->>>>>>> FETCH_HEAD
+       // ListView listView = (ListView) findViewById(R.id.listView);
+       // listView.setAdapter(adapter);
     }
 
 
@@ -77,19 +73,6 @@ public class MainActivity extends Activity {
         spinner1 = (Spinner) findViewById(R.id.spinner1);
         start = (Button) findViewById(R.id.start);
 
-        start.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-
-                Toast.makeText(MainActivity.this,
-                        "OnClickListener : " +
-                                "\nSpinner 1 : "+ String.valueOf(spinner1.getSelectedItem())
-                                ,
-                        Toast.LENGTH_SHORT).show();
-            }
-
-        });
     }
 
     @Override

@@ -18,6 +18,9 @@
     <string name="save">Save</string>
     <string name="main_menu">Back to Menu</string>
     <string name="saved">Contacts were successfully saved!</string>
+    <string name="panic">Call For Help</string>
+    <string name="home">Safely Back Home</string>
+    <string name="settings">Settings</string>
 
     <string name="duration">Choose a Journey</string>
 

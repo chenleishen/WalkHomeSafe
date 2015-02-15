@@ -9,9 +9,17 @@
    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings"
+        android:text="@string/action_settings"
         android:onClick="goToSettings"
         android:id="@+id/settings" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/duration"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal" />
 
     <Spinner
         android:id="@+id/spinner1"
@@ -23,9 +31,10 @@
    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:onClick="startJourney"
-        android:id="@+id/start" />
+        android:text="@string/submit"
+        android:id="@+id/start"
+        android:onClick="submitJourney"
+        android:layout_gravity="center_horizontal" />
 
 
 </LinearLayout>

@@ -28,13 +28,13 @@ public class User implements Serializable {
         };
     }
 
-    public void start(Journey journey){
+    public void start(int journeyNum){
         /**
          * display wait screen
          */
         if (checkBoxCheck())
         {
-            timeKeeper.postDelayed(checkAgainSignal,journey.getDuration()*1000*60);
+            timeKeeper.postDelayed(checkAgainSignal, journeyNum*1000*60);
         }
     }
 

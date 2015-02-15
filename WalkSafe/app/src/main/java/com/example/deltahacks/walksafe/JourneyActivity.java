@@ -35,15 +35,16 @@ public class JourneyActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
     public void startJourney(View view){
         Intent intent = getIntent();
         Intent nextIntent = new Intent(this, MainActivity.class);
-
         User jane = new User();
+        int journeyNum = (int) intent.getSerializableExtra("journeyKey");
+        jane.start(journeyNum);
+        startActivity(nextIntent);
     }
 
 }

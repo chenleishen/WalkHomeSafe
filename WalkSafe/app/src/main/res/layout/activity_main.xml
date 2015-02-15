@@ -35,31 +35,31 @@
         android:id="@+id/one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contact 1"/>
+        android:text="Taylor Swift"/>
 
    <CheckBox
         android:id="@+id/two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contact 2" />
+        android:text="Beyonce" />
 
    <CheckBox
         android:id="@+id/three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contact 3" />
+        android:text="Ryan Gosling" />
 
    <CheckBox
         android:id="@+id/four"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contact 4" />
+        android:text="Emma Watson" />
 
    <CheckBox
         android:id="@+id/five"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contact 5" />
+        android:text="Kanye West" />
 
     <TextView
          android:layout_width="wrap_content"

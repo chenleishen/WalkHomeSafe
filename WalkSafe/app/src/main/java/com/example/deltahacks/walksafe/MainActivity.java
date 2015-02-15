@@ -34,7 +34,6 @@ public class MainActivity extends Activity {
         addListenerOnButton();
         addListenerOnSpinnerItemSelection();
 
-        //ContactManager contactManager = new ContactManager();
         ContactManager contactManager = new ContactManager();
 
         try {
@@ -109,7 +108,6 @@ public class MainActivity extends Activity {
     public void goToSettings(View view){
         Intent intent = getIntent();
         Intent nextIntent = new Intent(this, ContactActivity.class);
-        //ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
         nextIntent.putExtra("managerKey", contactManager);
         startActivity(nextIntent);
     }
@@ -118,10 +116,11 @@ public class MainActivity extends Activity {
      * If new journey is created with correct string, end
      */
     public void submitJourney(View view){
-        //Intent intent = getIntent();
+        Intent intent = getIntent();
         Intent nextIntent = new Intent(this, JourneyActivity.class);
         int journeyID = spinner1.getSelectedItemPosition();
         nextIntent.putExtra("journeyKey", journeyID);
+        nextIntent.putExtra("managerKey", contactManager);
         startActivity(nextIntent);
 
     }

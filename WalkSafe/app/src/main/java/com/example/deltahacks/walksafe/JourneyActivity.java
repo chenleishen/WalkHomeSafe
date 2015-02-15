@@ -7,6 +7,8 @@ import android.telephony.SmsManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.BufferedWriter;
@@ -70,9 +72,9 @@ public class JourneyActivity extends ActionBarActivity {
         startActivity(nextIntent);
     }
 
-    public void helpMe(View view){
+   public void helpMe(View view) {
         Intent intent = getIntent();
-        //    Intent nextIntent = new Intent(this, .class);
+//        Intent nextIntent = new Intent(this, .class);
         ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
         ArrayList<Contact> contactList = contactManager.getContacts();
         String sms = "I have not arrived home at the expected time. Please give me a call ASAP.";
@@ -82,8 +84,9 @@ public class JourneyActivity extends ActionBarActivity {
                 String phoneNo = c.getContactNumber();
                 smsManager.sendTextMessage(phoneNo, null, sms, null, null);
             }
+            //smsManager.sendTextMessage(", null, sms, null, null);
 
-            Toast.makeText(getApplicationContext(), "Your friends has been alerted!",
+            Toast.makeText(getApplicationContext(), "Your friends have been alerted!",
                     Toast.LENGTH_LONG).show();
 
         } catch (Exception e) {
@@ -91,8 +94,8 @@ public class JourneyActivity extends ActionBarActivity {
                     Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
-        //    startActivity(nextIntent);
-    }
+            //    startActivity(nextIntent);
+        }
 
     public void checkAgain(View view) {
         Intent intent = getIntent();

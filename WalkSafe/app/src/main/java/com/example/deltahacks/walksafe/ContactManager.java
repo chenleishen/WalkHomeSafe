@@ -14,8 +14,12 @@ public class ContactManager implements Serializable{
         this.contacts = new ArrayList<Contact>();
     }
 
-    public void addContact(Contact contact){
-        this.contacts.add(contact);
+    public void addContact(Contact contact) throws ContactListFullException{
+        if(this.contacts.size() >= 5){
+            throw new ContactListFullException();
+        }else {
+            this.contacts.add(contact);
+        }
     }
 
     public void deleteContact(Contact contact){

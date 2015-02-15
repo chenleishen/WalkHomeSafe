@@ -43,7 +43,7 @@ public class AddActivity extends ActionBarActivity {
 
     public void addContact(View view) {
         Intent intent = getIntent();
-        Intent nextIntent = new Intent(this, MainActivity.class);
+        Intent nextIntent = new Intent(this, ContactActivity.class);
 
         EditText nameText = (EditText) findViewById(R.id.contact_name);
         EditText numberText= (EditText) findViewById(R.id.contact_number);

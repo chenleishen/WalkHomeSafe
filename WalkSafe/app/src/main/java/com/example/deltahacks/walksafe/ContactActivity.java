@@ -47,22 +47,27 @@ public class ContactActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void addContact(){
-        Intent intent = getIntent();
-        Intent nextIntent = new Intent(this, MainActivity.class);
 
+    /**
+     * Moves to AddActivity
+     */
+    public void moveToAdd(){
+        Intent intent = getIntent();
+        Intent nextIntent = new Intent(this, AddActivity.class);
+        ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
+        nextIntent.putExtra("managerKey", contactManager);
+        startActivity(nextIntent);
     }
 
-    public void deleteContact(){
+    /**
+     * Moves to RemoveActivity
+     */
+    public void moveToRemove(){
         Intent intent = getIntent();
-        Intent nextIntent = new Intent(this, MainActivity.class);
-
-    }
-
-    public void updateContact(){
-        Intent intent = getIntent();
-        Intent nextIntent = new Intent(this, MainActivity.class);
-
+        Intent nextIntent = new Intent(this, RemoveActivity.class);
+        ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
+        nextIntent.putExtra("managerKey", contactManager);
+        startActivity(nextIntent);
     }
 
     public void save(View view) throws FileNotFoundException, UnsupportedEncodingException {

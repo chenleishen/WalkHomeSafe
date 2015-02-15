@@ -13,5 +13,7 @@
     <string name="contact_number">Phone Number</string>
     <string name="name">Name</string>
     <string name="submit">Submit</string>
+    <string name="add">Add Contact</string>
+    <string name="remove">Remove Contact</string>
 
 </resources>

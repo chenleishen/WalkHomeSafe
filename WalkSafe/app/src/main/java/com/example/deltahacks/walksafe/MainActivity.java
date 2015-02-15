@@ -25,6 +25,8 @@ public class MainActivity extends Activity {
     private Spinner spinner1;
     private Button start;
 
+    ContactManager contactManager = new ContactManager();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,6 @@ public class MainActivity extends Activity {
         addListenerOnButton();
         addListenerOnSpinnerItemSelection();
 
-        ContactManager contactManager = new ContactManager();
 
         try {
             BufferedReader contactReader = new BufferedReader
@@ -41,8 +42,8 @@ public class MainActivity extends Activity {
             String[] contactInfo;
             while ((contactLine = contactReader.readLine()) != null) {
                 contactInfo = contactLine.split(",");
-                String name = contactInfo[1];
-                String number= contactInfo[2];
+                String name = contactInfo[0];
+                String number = contactInfo[1];
                 contactManager.addContact(new Contact(name, number));
             }
             contactReader.close();
@@ -58,14 +59,8 @@ public class MainActivity extends Activity {
         }
 
         CustomAdapter adapter = new CustomAdapter(this, R.layout.contact_list_item, contactManager.getContacts());
-<<<<<<< HEAD
-       // ListView listView = (ListView) findViewById(R.id.listView);
-       // listView.setAdapter(adapter);
-=======
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
-
->>>>>>> FETCH_HEAD
     }
 
 
@@ -111,7 +106,6 @@ public class MainActivity extends Activity {
     public void goToSettings(View view){
         Intent intent = getIntent();
         Intent nextIntent = new Intent(this, ContactActivity.class);
-        ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
         nextIntent.putExtra("managerKey", contactManager);
         startActivity(nextIntent);
     }
@@ -120,7 +114,7 @@ public class MainActivity extends Activity {
      * If new journey is created with correct string, end
      */
     public void submitJourney(View view){
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
         Intent nextIntent = new Intent(this, JourneyActivity.class);
         int journeyID = spinner1.getSelectedItemPosition();
         nextIntent.putExtra("journeyKey", journeyID);

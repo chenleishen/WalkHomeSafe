@@ -80,7 +80,8 @@ public class ContactActivity extends Activity {
     }
 
     public void save(View view) throws FileNotFoundException, UnsupportedEncodingException {
-        Intent nextIntent = new Intent(this, MainActivity.class);
+
+        Intent nextIntent = new Intent(this, SaveActivity.class);
         Intent intent = getIntent();
         ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
 

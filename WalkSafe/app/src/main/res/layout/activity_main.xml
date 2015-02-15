@@ -13,7 +13,6 @@
         android:onClick="goToSettings"
         android:id="@+id/settings" />
 
-<<<<<<< HEAD
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +20,7 @@
         android:text="@string/duration"
         android:id="@+id/textView2"
         android:layout_gravity="center_horizontal" />
-=======
+
    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +29,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
->>>>>>> FETCH_HEAD
 
     <Spinner
         android:id="@+id/spinner1"

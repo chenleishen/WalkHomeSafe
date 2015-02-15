@@ -12,8 +12,10 @@ public class JourneyActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_journey);
+        startJourney();
     }
 
 
@@ -38,12 +40,23 @@ public class JourneyActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void startJourney(View view){
+    public void startJourney(){
         Intent intent = getIntent();
-        Intent nextIntent = new Intent(this, MainActivity.class);
+    //    Intent nextIntent = new Intent(this, MainActivity.class);
         User jane = new User();
         int journeyNum = (int) intent.getSerializableExtra("journeyKey");
         jane.start(journeyNum);
+    //    startActivity(nextIntent);
+    }
+    public void home(){
+        Intent intent = getIntent();
+        Intent nextIntent = new Intent(this, MainActivity.class);
+        startActivity(nextIntent);
+    }
+
+    public void help(){
+        Intent intent = getIntent();
+        Intent nextIntent = new Intent(this, MainActivity.class);
         startActivity(nextIntent);
     }
 

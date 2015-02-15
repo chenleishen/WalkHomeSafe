@@ -13,29 +13,28 @@ public class User implements Serializable {
      */
     private Handler timeKeeper;
     private CheckBox One, Two, Three, Four, Five;
-    private Runnable checkAgainSignal;
+    final Runnable checkAgainSignal = new Runnable() {
+        @Override
+        public void run() {
+            checkAgain();
+        };
+    };
 
     /**
      * methods
      */
     public User(){
-        Handler handler = new Handler();
-        Runnable checkAgainSignal = new Runnable() {
-            @Override
-            public void run() {
-                checkAgain();
-            }
-        };
+        timeKeeper = new Handler();
     }
 
     public void start(int journeyNum){
         /**
          * display wait screen
          */
-        if (checkBoxCheck())
-        {
+    //    if (checkBoxCheck())
+    //    {
             timeKeeper.postDelayed(checkAgainSignal, journeyNum*1000*60);
-        }
+    //    }
     }
 
     public boolean checkBoxCheck(){

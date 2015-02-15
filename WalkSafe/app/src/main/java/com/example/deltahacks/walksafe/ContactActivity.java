@@ -5,6 +5,15 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 
 
 public class ContactActivity extends ActionBarActivity {
@@ -54,5 +63,26 @@ public class ContactActivity extends ActionBarActivity {
         Intent intent = getIntent();
         Intent nextIntent = new Intent(this, MainActivity.class);
 
+    }
+
+    public void save(View view) throws FileNotFoundException, UnsupportedEncodingException {
+        Intent nextIntent = new Intent(this, MainActivity.class);
+        Intent intent = getIntent();
+        ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
+
+        ArrayList<Contact> contactList = contactManager.getContacts();
+        BufferedWriter infoWriter = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(this.getApplicationContext().getFilesDir().toString() + "/contacts.txt"), "UTF-8"));
+        try {
+            for (Contact c : contactList) {
+                infoWriter.write(c.getContactName() + ", " + c.getContactNumber());
+            }
+            infoWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        nextIntent.putExtra("managerKey", contactManager);
+        startActivity(nextIntent);
     }
 }

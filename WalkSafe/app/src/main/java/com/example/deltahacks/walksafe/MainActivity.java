@@ -75,6 +75,17 @@ public class MainActivity extends Activity {
     }
 
     /**
+     * Moves to AddActivity
+     */
+    public void moveToAdd(){
+        Intent intent = getIntent();
+        Intent nextIntent = new Intent(this, AddActivity.class);
+        ContactManager contactManager = (ContactManager) intent.getSerializableExtra("managerKey");
+        nextIntent.putExtra("managerKey", contactManager);
+        startActivity(nextIntent);
+    }
+
+    /**
      * Moves to ContactActivity (settings page),
      * allows you to add/delete/update contacts
      */

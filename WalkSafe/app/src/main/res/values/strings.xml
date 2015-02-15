@@ -7,5 +7,11 @@
     <string name="title_activity_contact">ContactActivity</string>
     <string name="title_activity_journey">JourneyActivity</string>
     <string name="title_activity_check">CheckActivity</string>
+    <string name="title_activity_save">SaveActivity</string>
+    <string name="title_activity_add">AddActivity</string>
+    <string name="title_activity_remove">RemoveActivity</string>
+    <string name="contact_number">Phone Number</string>
+    <string name="name">Name</string>
+    <string name="submit">Submit</string>
 
 </resources>

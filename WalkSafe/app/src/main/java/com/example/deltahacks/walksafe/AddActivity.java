@@ -58,11 +58,5 @@ public class AddActivity extends ActionBarActivity {
         nextIntent.putExtra("managerKey", contactManager);
         startActivity(nextIntent);
 
-
-        
-
-
-
-
     }
 }
